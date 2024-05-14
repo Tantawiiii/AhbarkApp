@@ -58,7 +58,7 @@ fun OnboardingScreen() {
             OnboardingPagesClass(page = OnboardingPages[index])
         }
 
-        Spacer(modifier = Modifier.weight(1f))
+        Spacer(modifier = Modifier.weight(0.5f))
 
         Row(
             modifier = Modifier
@@ -75,7 +75,9 @@ fun OnboardingScreen() {
             )
 
 
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            Row(
+              //  modifier = Modifier.padding(bottom = 15.dp),
+                verticalAlignment = Alignment.CenterVertically) {
 
                 val scope = rememberCoroutineScope()
 
@@ -107,7 +109,7 @@ fun OnboardingScreen() {
             
 
         }
-        Spacer(modifier = Modifier.weight(0.5f))
+        //Spacer(modifier = Modifier.weight(0.5f))
     }
 
 }

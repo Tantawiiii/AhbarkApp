@@ -26,12 +26,15 @@ import com.tantawii.ahbarkapp.presentation.common.NewsTextButton
 import com.tantawii.ahbarkapp.presentation.onbording.components.OnboardingPagesClass
 import com.tantawii.ahbarkapp.presentation.onbording.components.PageIndicator
 import com.tantawii.ahbarkapp.presentation.onbording.data.OnboardingPages
+import com.tantawii.ahbarkapp.presentation.onbording.viewmodel.OnBoardingEvents
 import kotlinx.coroutines.launch
 
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnboardingScreen() {
+fun OnboardingScreen(
+    event: (OnBoardingEvents) -> Unit
+) {
 
     Column(
         modifier = Modifier
@@ -69,15 +72,18 @@ fun OnboardingScreen() {
             verticalAlignment = Alignment.Bottom
         ) {
             PageIndicator(
-                modifier = Modifier.width(PageIndicatorWidth).padding(bottom = 15.dp),
+                modifier = Modifier
+                    .width(PageIndicatorWidth)
+                    .padding(bottom = 15.dp),
                 pageSize = OnboardingPages.size,
                 selectedPage = pagerState.currentPage
             )
 
 
             Row(
-              //  modifier = Modifier.padding(bottom = 15.dp),
-                verticalAlignment = Alignment.CenterVertically) {
+                //  modifier = Modifier.padding(bottom = 15.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
 
                 val scope = rememberCoroutineScope()
 
@@ -94,9 +100,8 @@ fun OnboardingScreen() {
                 NewsButton(text = buttonState.value[1],
                     onClick = {
                         scope.launch {
-                            if (pagerState.currentPage == 3) {
-                                //TODO: Navigate to home Screen
-
+                            if (pagerState.currentPage == 2) {
+                                event(OnBoardingEvents.SaveAppEntry)
                             } else {
                                 pagerState.animateScrollToPage(
                                     page = pagerState.currentPage + 1
@@ -106,10 +111,9 @@ fun OnboardingScreen() {
                     }
                 )
             }
-            
+
 
         }
-        //Spacer(modifier = Modifier.weight(0.5f))
     }
 
 }

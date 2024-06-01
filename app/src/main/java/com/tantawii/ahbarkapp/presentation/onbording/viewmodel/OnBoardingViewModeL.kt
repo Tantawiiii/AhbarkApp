@@ -2,7 +2,7 @@ package com.tantawii.ahbarkapp.presentation.onbording.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tantawii.ahbarkapp.domain.usecases.AppEntryUseCases
+import com.tantawii.ahbarkapp.domain.usecases.appentry.AppEntryUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

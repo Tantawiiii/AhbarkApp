@@ -1,4 +1,4 @@
-package com.tantawii.ahbarkapp.data.remote.dto
+package com.tantawii.ahbarkapp.domain.model
 
 data class Article(
     val author: String,

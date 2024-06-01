@@ -1,4 +1,4 @@
-package com.tantawii.ahbarkapp.domain.usecases
+package com.tantawii.ahbarkapp.domain.usecases.appentry
 
 import com.tantawii.ahbarkapp.domain.manger.LocalUserManger
 

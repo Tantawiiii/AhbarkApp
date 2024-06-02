@@ -7,6 +7,4 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class NewsApplication : Application() {
 
-
-
 }

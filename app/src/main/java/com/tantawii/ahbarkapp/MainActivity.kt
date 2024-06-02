@@ -17,21 +17,19 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.tantawii.ahbarkapp.mainviewmodel.MainViewModel
 import com.tantawii.ahbarkapp.presentation.navgraph.NavGraph
 
-
 import com.tantawii.ahbarkapp.ui.theme.AhbarkAppTheme
 import dagger.hilt.android.AndroidEntryPoint
-
 
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    val  viewModeL by viewModels<MainViewModel> ()
+    private val viewModeL by viewModels<MainViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         installSplashScreen().apply {
-            setKeepOnScreenCondition{
+            setKeepOnScreenCondition {
                 viewModeL.splashCondition
             }
         }
@@ -49,12 +47,19 @@ class MainActivity : ComponentActivity() {
                     )
                 }
 
-                Box(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
-                    
-                    val  startDestination = viewModeL.startDestination
+                Box(
+                    modifier = Modifier
+                        .background(
+                            MaterialTheme
+                                .colorScheme
+                                .background
+                        )
+                ) {
+                    val startDestination = viewModeL.startDestination
                     NavGraph(startDestination = startDestination)
-
                 }
+
+
             }
         }
     }

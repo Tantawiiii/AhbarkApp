@@ -19,8 +19,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.tantawii.ahbarkapp.presentation.Dimens.MediumPadding2
-import com.tantawii.ahbarkapp.presentation.Dimens.PageIndicatorWidth
+import com.tantawii.ahbarkapp.utils.Dimens.MediumPadding2
+import com.tantawii.ahbarkapp.utils.Dimens.PageIndicatorWidth
 import com.tantawii.ahbarkapp.presentation.common.NewsButton
 import com.tantawii.ahbarkapp.presentation.common.NewsTextButton
 import com.tantawii.ahbarkapp.presentation.onbording.components.OnboardingPagesClass

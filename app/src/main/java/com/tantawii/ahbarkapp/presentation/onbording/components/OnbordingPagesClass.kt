@@ -18,8 +18,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.tantawii.ahbarkapp.R
-import com.tantawii.ahbarkapp.presentation.Dimens.MediumPadding1
-import com.tantawii.ahbarkapp.presentation.Dimens.MediumPadding2
+import com.tantawii.ahbarkapp.utils.Dimens.MediumPadding1
+import com.tantawii.ahbarkapp.utils.Dimens.MediumPadding2
 import com.tantawii.ahbarkapp.presentation.onbording.data.OnboardingPageDataClass
 import com.tantawii.ahbarkapp.presentation.onbording.data.OnboardingPages
 import com.tantawii.ahbarkapp.ui.theme.AhbarkAppTheme

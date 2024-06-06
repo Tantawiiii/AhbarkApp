@@ -12,6 +12,8 @@ import com.tantawii.ahbarkapp.presentation.home.HomeScreen
 import com.tantawii.ahbarkapp.presentation.home.HomeViewModel
 import com.tantawii.ahbarkapp.presentation.onbording.ui.OnboardingScreen
 import com.tantawii.ahbarkapp.presentation.onbording.viewmodel.OnBoardingViewModeL
+import com.tantawii.ahbarkapp.presentation.search.SearchScreen
+import com.tantawii.ahbarkapp.presentation.search.SearchViewModel
 
 
 @Composable
@@ -45,10 +47,9 @@ fun NavGraph(
                 route = Route.NewsNavigatorScreen.route
             ) {
 
-                val viewModel: HomeViewModel = hiltViewModel()
-                val articles = viewModel.news.collectAsLazyPagingItems()
+                val viewModel: SearchViewModel = hiltViewModel()
+                SearchScreen(state = viewModel.state.value, event = viewModel::onEvent, navigate = {})
 
-                HomeScreen(articles = articles, navigate = {})
         
             }
         }

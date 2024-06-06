@@ -11,6 +11,7 @@ import com.tantawii.ahbarkapp.domain.usecases.appentry.ReadAppEntry
 import com.tantawii.ahbarkapp.domain.usecases.appentry.SaveAppEntry
 import com.tantawii.ahbarkapp.domain.usecases.news.GetNews
 import com.tantawii.ahbarkapp.domain.usecases.news.NewsUseCases
+import com.tantawii.ahbarkapp.domain.usecases.news.SearchNews
 import com.tantawii.ahbarkapp.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -63,7 +64,8 @@ object AppModule {
         newsRepository: NewsRepository
     ): NewsUseCases {
         return NewsUseCases(
-            getNews = GetNews(newsRepository)
+            getNews = GetNews(newsRepository),
+            searchNews = SearchNews(newsRepository)
         )
     }
 

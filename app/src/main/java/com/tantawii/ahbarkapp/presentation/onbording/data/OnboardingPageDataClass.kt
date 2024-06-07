@@ -12,18 +12,18 @@ data class OnboardingPageDataClass(
 
 val OnboardingPages = listOf(
     OnboardingPageDataClass(
-        title = "But I must explain to you how all mistaken",
-        description = "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system,",
+        title = "Collection of Newspaper Headlines",
+        description = "It is always best to start online if you are looking for newspapers. A growing number of websites provide access to digitised newspapers.",
         imageRes = R.drawable.onboarding1
     ),
     OnboardingPageDataClass(
-        title = "At vero eos et accusamus et iusto",
+        title = "Find your Global Articles",
         description = "expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself",
         imageRes = R.drawable.onboarding2
     ),
     OnboardingPageDataClass(
-        title = "when our power of choice",
-        description = "because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful",
+        title = "Breaking News, Latest Updated News",
+        description = "News is an energetic fast paced promotional template for After Effects. Broadcast News and Business Report template",
         imageRes = R.drawable.onboarding3
     ),
 )

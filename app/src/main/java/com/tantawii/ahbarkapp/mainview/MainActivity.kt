@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.tantawii.ahbarkapp.presentation.common.EmptyScreen
 import com.tantawii.ahbarkapp.presentation.navgraph.NavGraph
 
 import com.tantawii.ahbarkapp.ui.theme.AhbarkAppTheme
@@ -57,9 +58,11 @@ class MainActivity : ComponentActivity() {
                             MaterialTheme
                                 .colorScheme
                                 .background
-                        ).fillMaxSize()
+                        )
+                        .fillMaxSize()
                 ) {
                     NavGraph(startDestination = viewModeL.startDestination.value)
+                  //  EmptyScreen()
                 }
 
 

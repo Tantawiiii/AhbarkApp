@@ -1,19 +1,14 @@
 package com.tantawii.ahbarkapp.presentation.navgraph
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
-import androidx.paging.compose.collectAsLazyPagingItems
-import com.tantawii.ahbarkapp.presentation.home.HomeScreen
-import com.tantawii.ahbarkapp.presentation.home.HomeViewModel
+import com.tantawii.ahbarkapp.presentation.bottom_navigator.Navigator
 import com.tantawii.ahbarkapp.presentation.onbording.ui.OnboardingScreen
 import com.tantawii.ahbarkapp.presentation.onbording.viewmodel.OnBoardingViewModeL
-import com.tantawii.ahbarkapp.presentation.search.SearchScreen
-import com.tantawii.ahbarkapp.presentation.search.SearchViewModel
 
 
 @Composable
@@ -46,11 +41,7 @@ fun NavGraph(
             composable(
                 route = Route.NewsNavigatorScreen.route
             ) {
-
-                val viewModel: SearchViewModel = hiltViewModel()
-                SearchScreen(state = viewModel.state.value, event = viewModel::onEvent, navigate = {})
-
-        
+                Navigator()
             }
         }
 

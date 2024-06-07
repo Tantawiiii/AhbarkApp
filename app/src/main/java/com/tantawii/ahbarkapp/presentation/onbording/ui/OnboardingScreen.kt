@@ -33,7 +33,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnboardingScreen(
-    event: (OnBoardingEvents) -> Unit
+    onEvent: (OnBoardingEvents) -> Unit
 ) {
 
     Column(
@@ -101,7 +101,7 @@ fun OnboardingScreen(
                     onClick = {
                         scope.launch {
                             if (pagerState.currentPage == 2) {
-                                event(OnBoardingEvents.SaveAppEntry)
+                                onEvent(OnBoardingEvents.SaveAppEntry)
                             } else {
                                 pagerState.animateScrollToPage(
                                     page = pagerState.currentPage + 1

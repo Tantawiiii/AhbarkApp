@@ -82,6 +82,7 @@ fun SearchBar(
             colors = TextFieldDefaults.textFieldColors(
                 containerColor = colorResource(id = R.color.input_background),
                 focusedTextColor = if (isSystemInDarkTheme()) Color.White else Color.Black,
+                disabledTextColor = if (isSystemInDarkTheme()) Color.White else Color.Black,
                 cursorColor = if (isSystemInDarkTheme()) Color.White else Color.Black,
                 disabledIndicatorColor = Color.Transparent,
                 errorIndicatorColor = Color.Transparent,

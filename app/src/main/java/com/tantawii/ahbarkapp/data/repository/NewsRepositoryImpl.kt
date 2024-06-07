@@ -1,4 +1,4 @@
-package com.tantawii.ahbarkapp.data.remote.repository
+package com.tantawii.ahbarkapp.data.repository
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig

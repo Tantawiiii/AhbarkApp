@@ -34,7 +34,7 @@ fun NavGraph(
 
                 val viewModel: OnBoardingViewModeL = hiltViewModel()
                 OnboardingScreen(
-                    event = viewModel::onEvent
+                    onEvent = viewModel::onEvent
                 )
             }
         }

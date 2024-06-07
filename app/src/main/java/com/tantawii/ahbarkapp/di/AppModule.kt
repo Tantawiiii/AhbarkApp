@@ -1,9 +1,13 @@
 package com.tantawii.ahbarkapp.di
 
 import android.app.Application
+import androidx.room.Room
+import com.tantawii.ahbarkapp.data.local.NewsDao
+import com.tantawii.ahbarkapp.data.local.NewsDatabase
+import com.tantawii.ahbarkapp.data.local.NewsTypeConvertor
 import com.tantawii.ahbarkapp.data.manger.LocalUserManagerImpl
 import com.tantawii.ahbarkapp.data.remote.NewsApi
-import com.tantawii.ahbarkapp.data.remote.repository.NewsRepositoryImpl
+import com.tantawii.ahbarkapp.data.repository.NewsRepositoryImpl
 import com.tantawii.ahbarkapp.domain.manger.LocalUserManger
 import com.tantawii.ahbarkapp.domain.repository.NewsRepository
 import com.tantawii.ahbarkapp.domain.usecases.appentry.AppEntryUseCases
@@ -13,6 +17,7 @@ import com.tantawii.ahbarkapp.domain.usecases.news.GetNews
 import com.tantawii.ahbarkapp.domain.usecases.news.NewsUseCases
 import com.tantawii.ahbarkapp.domain.usecases.news.SearchNews
 import com.tantawii.ahbarkapp.utils.Constants.BASE_URL
+import com.tantawii.ahbarkapp.utils.Constants.NEWS_DATABASE_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -68,5 +73,28 @@ object AppModule {
             searchNews = SearchNews(newsRepository)
         )
     }
+
+
+    @Provides
+    @Singleton
+    fun  provideNewsDatabase(
+        application: Application
+    ): NewsDatabase {
+        return Room.databaseBuilder(
+            context = application,
+            klass = NewsDatabase::class.java,
+            name = NEWS_DATABASE_NAME
+        ).addTypeConverter(NewsTypeConvertor())
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideNewsDao(
+        newsDatabase: NewsDatabase
+    ) : NewsDao = newsDatabase.newsDao
+
 
 }

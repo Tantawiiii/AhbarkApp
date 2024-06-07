@@ -5,6 +5,8 @@ plugins {
     id("kotlin-kapt")
 }
 
+
+
 android {
     namespace = "com.tantawii.ahbarkapp"
     compileSdk = 34
@@ -81,7 +83,7 @@ dependencies {
     val hiltVersion = 2.47
     implementation ("com.google.dagger:hilt-android:$hiltVersion")
     kapt ("com.google.dagger:hilt-android-compiler:$hiltVersion")
-    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
 
 
     //Retrofit
@@ -92,22 +94,22 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.4.0")
 
     //Datastore
-    implementation ("androidx.datastore:datastore-preferences:1.0.0")
+    implementation ("androidx.datastore:datastore-preferences:1.1.1")
 
     //Compose Foundation
-    implementation ("androidx.compose.foundation:foundation:1.4.3")
+    implementation ("androidx.compose.foundation:foundation:1.6.7")
 
     //Accompanist
     implementation ("com.google.accompanist:accompanist-systemuicontroller:0.31.4-beta")
 
     //Paging 3
-    implementation ("androidx.paging:paging-runtime:3.1.1")
-    implementation ("androidx.paging:paging-compose:3.2.0-rc01")
+    implementation ("androidx.paging:paging-runtime:3.3.0")
+    implementation ("androidx.paging:paging-compose:3.3.0")
 
     //Room
-    val room_version = "2.5.2"
+    val room_version = "2.6.1"
     implementation ("androidx.room:room-runtime:$room_version")
     kapt ("androidx.room:room-compiler:$room_version")
-    implementation ("androidx.room:room-ktx:2.5.2")
+    implementation ("androidx.room:room-ktx:2.6.1")
 
 }

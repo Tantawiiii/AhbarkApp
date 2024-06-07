@@ -25,4 +25,6 @@ object Dimens {
 
     val ArticleImageHeight = 248.dp
 
+    val Elevation1 = 10.dp
+
 }

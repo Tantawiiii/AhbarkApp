@@ -13,9 +13,13 @@ import com.tantawii.ahbarkapp.domain.repository.NewsRepository
 import com.tantawii.ahbarkapp.domain.usecases.appentry.AppEntryUseCases
 import com.tantawii.ahbarkapp.domain.usecases.appentry.ReadAppEntry
 import com.tantawii.ahbarkapp.domain.usecases.appentry.SaveAppEntry
+import com.tantawii.ahbarkapp.domain.usecases.news.DeleteArticle
 import com.tantawii.ahbarkapp.domain.usecases.news.GetNews
 import com.tantawii.ahbarkapp.domain.usecases.news.NewsUseCases
 import com.tantawii.ahbarkapp.domain.usecases.news.SearchNews
+import com.tantawii.ahbarkapp.domain.usecases.news.SelectedArticle
+import com.tantawii.ahbarkapp.domain.usecases.news.SelectedArticles
+import com.tantawii.ahbarkapp.domain.usecases.news.UpsertArticle
 import com.tantawii.ahbarkapp.utils.Constants.BASE_URL
 import com.tantawii.ahbarkapp.utils.Constants.NEWS_DATABASE_NAME
 import dagger.Module
@@ -60,17 +64,23 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNewsRepository(
-        newsApi: NewsApi
-    ): NewsRepository = NewsRepositoryImpl(newsApi)
+        newsApi: NewsApi,
+        newsDao: NewsDao
+    ): NewsRepository = NewsRepositoryImpl(newsApi,newsDao)
 
     @Provides
     @Singleton
     fun provideNewsUseCases(
-        newsRepository: NewsRepository
+        newsRepository: NewsRepository,
+        newsDao: NewsDao
     ): NewsUseCases {
         return NewsUseCases(
             getNews = GetNews(newsRepository),
-            searchNews = SearchNews(newsRepository)
+            searchNews = SearchNews(newsRepository),
+            upsertArticle = UpsertArticle(newsRepository),
+            deleteArticle = DeleteArticle(newsRepository),
+            selectedArticles = SelectedArticles(newsRepository),
+            selectedArticle = SelectedArticle(newsRepository)
         )
     }
 

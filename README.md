@@ -20,4 +20,4 @@ https://newsapi.org/
 
 ## 🏰 System Design:
 
-![System Desgin AhbarkApp](https://github.com/Tantawiiii/AhbarkApp/assets/36699813/b8d0fa2c-599b-424c-8013-9165d7566b86)
+<img src="https://github.com/Tantawiiii/AhbarkApp/assets/36699813/211e9ead-314b-4fcc-a2ac-1723c19fc971" alt="System Design AhbarkApp" width="500" height="600"/>

@@ -23,6 +23,7 @@ import com.tantawii.ahbarkapp.utils.Dimens.MediumPadding2
 import com.tantawii.ahbarkapp.presentation.onbording.data.OnboardingPageDataClass
 import com.tantawii.ahbarkapp.presentation.onbording.data.OnboardingPages
 import com.tantawii.ahbarkapp.ui.theme.AhbarkAppTheme
+import com.tantawii.ahbarkapp.utils.Dimens.MediumPadding0
 
 @Composable
 fun OnboardingPagesClass(
@@ -39,16 +40,16 @@ fun OnboardingPagesClass(
             contentDescription = null,
             contentScale = ContentScale.Crop
         )
-        Spacer(modifier = Modifier.height(MediumPadding1))
+        Spacer(modifier = Modifier.height(MediumPadding0))
         Text(
             text = page.title,
-            modifier = Modifier.padding(MediumPadding2),
+            modifier = Modifier.padding(MediumPadding1),
             style = MaterialTheme.typography.headlineLarge.copy(fontWeight = FontWeight.Bold),
             color = colorResource(id = R.color.display_small)
         )
         Text(
             text = page.description,
-            modifier = Modifier.padding(MediumPadding2),
+            modifier = Modifier.padding(MediumPadding1),
             style = MaterialTheme.typography.bodyMedium,
             color = colorResource(id = R.color.text_medium)
         )

@@ -13,7 +13,7 @@ data class OnboardingPageDataClass(
 val OnboardingPages = listOf(
     OnboardingPageDataClass(
         title = "Collection of Newspaper Headlines",
-        description = "It is always best to start online if you are looking for newspapers. A growing number of websites provide access to digitised newspapers.",
+        description = "It is always best to start  online if you are looking for newspapers. A growing number of websites provide access to digitised newspapers.",
         imageRes = R.drawable.onboarding1
     ),
     OnboardingPageDataClass(

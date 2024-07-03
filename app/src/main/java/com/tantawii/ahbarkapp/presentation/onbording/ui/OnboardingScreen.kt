@@ -27,6 +27,7 @@ import com.tantawii.ahbarkapp.presentation.onbording.components.OnboardingPagesC
 import com.tantawii.ahbarkapp.presentation.onbording.components.PageIndicator
 import com.tantawii.ahbarkapp.presentation.onbording.data.OnboardingPages
 import com.tantawii.ahbarkapp.presentation.onbording.viewmodel.OnBoardingEvents
+import com.tantawii.ahbarkapp.utils.Dimens.MediumPadding1
 import kotlinx.coroutines.launch
 
 
@@ -38,6 +39,7 @@ fun OnboardingScreen(
 
     Column(
         modifier = Modifier
+            .padding(bottom = MediumPadding1)
             .fillMaxSize()
 
     ) {
@@ -81,7 +83,7 @@ fun OnboardingScreen(
 
 
             Row(
-                //  modifier = Modifier.padding(bottom = 15.dp),
+                  modifier = Modifier.padding(bottom = 15.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
 
